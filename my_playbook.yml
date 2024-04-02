@@ -2,7 +2,7 @@
 - name: play for nodejs deployment
   hosts: localhost
   vars:
-    container_name: nodejs
+    container_name: express-api
     container_port: 3000
     host_port: 3000
     rollback_tag: rollback
