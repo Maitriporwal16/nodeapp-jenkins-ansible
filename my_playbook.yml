@@ -2,7 +2,7 @@
 - name: play for nodejs deployment
   hosts: localhost
   vars:
-    container_name: express-api
+    container_name: node-app
     container_port: 3000
     host_port: 3000
     rollback_tag: rollback
@@ -16,6 +16,6 @@
     - name: Tag current image for rollback for backup of image
       command: docker tag {{ container_name }}:latest {{ container_name }}:{{ rollback_tag }}
     - name: Building the docker container
-      command: docker build -t  {{ container_name }}:latest /var/lib/jenkins/workspace/nodejs_sample/
+      command: docker build -t  {{ container_name }}:latest /Users/maitri/.jenkins/workspace/Node-app-CICD
     - name: Deploy the latest Docker image
       command: docker run -d --name {{ container_name }} -p {{ host_port }}:{{ container_port }}  {{ container_name }}:latest
