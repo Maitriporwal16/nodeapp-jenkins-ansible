@@ -2,9 +2,9 @@
 - name: play for nodejs deployment
   hosts: localhost
   vars:
-    container_name: node-app
-    container_port: 3000
-    host_port: 3000
+    container_name: node-image
+    container_port: 4000
+    host_port: 4000
     rollback_tag: rollback
   tasks:
     - name: Remove existing rollback image
